@@ -52,8 +52,18 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Code\Initialization\GameInitialization.cs" />
-     <Compile Include="Assets\Code\Initialization\GameController.cs" />
+     <Compile Include="Assets\Code\Datas\TownsData.cs" />
+     <Compile Include="Assets\Code\Interfaces\ILateExecute.cs" />
+     <Compile Include="Assets\Code\Interfaces\IExecute.cs" />
+     <Compile Include="Assets\Code\Controller\GameController.cs" />
+     <Compile Include="Assets\Code\Interfaces\IController.cs" />
+     <Compile Include="Assets\Code\Datas\SnakeData.cs" />
+     <Compile Include="Assets\Code\Datas\MainData.cs" />
+     <Compile Include="Assets\Code\Datas\TownType.cs" />
+     <Compile Include="Assets\Code\Initialization\GameStarter.cs" />
+     <Compile Include="Assets\Code\Controller\Controllers.cs" />
+     <Compile Include="Assets\Code\Interfaces\IInitialization.cs" />
+     <Compile Include="Assets\Code\Interfaces\ICleanup.cs" />
  <Reference Include="UnityEngine">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.4f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
  </Reference>
