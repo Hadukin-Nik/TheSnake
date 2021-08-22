@@ -10,6 +10,11 @@ namespace Code.Datas
         [SerializeField] private string pathToTownsData;
         [SerializeField] private string pathToSnakeData;
 
+        
+        [SerializeField] private float _speedOfAppearingTowns;
+
+        [SerializeField] private int _townsOnMapCount;
+
         private SnakeData _snakeData;
         private TownsData _townsData;
 

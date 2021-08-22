@@ -8,14 +8,25 @@ namespace Code.Datas
     {
         [SerializeField] private Sprite _spriteOfHead;
 
+        [SerializeField] private Vector2 _startPosition;
+        
         [SerializeField] private float _lengthOfStep;
         [SerializeField] private float _countOfStepsInSecond;
+        
         
         public Sprite Sprite
         {
             get
             {
                 return _spriteOfHead;
+            }
+        }
+        
+        public Vector2 StartPosition
+        {
+            get
+            {
+                return _startPosition;
             }
         }
         
