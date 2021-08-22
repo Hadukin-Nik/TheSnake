@@ -1,20 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
+using Code.Datas.Structures;
+
 using UnityEngine;
 
 namespace Code.Datas
 {
-    [CreateAssetMenu(fileName = "SnakeData", menuName = "Data/Objects/MainTownsCreator")]
+    [CreateAssetMenu(fileName = "MainTownsCreator", menuName = "Data/MainTownsCreator")]
     public sealed class TownsData : ScriptableObject
     {
-        [Serializable]
-        private struct Town
-        {
-            public string pathToTownType;
-            
-            public int count;
-        }
+        [SerializeField] private List<TownsDataContainer> _listOfTowns;
 
-        [SerializeField] private List<Town> _listOfTowns;
+        public List<TownsDataContainer> ListOfTowns
+        {
+            get
+            {
+                return _listOfTowns;
+            }
+        }
     }
 }

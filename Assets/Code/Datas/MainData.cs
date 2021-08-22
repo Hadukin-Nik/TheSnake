@@ -1,14 +1,19 @@
 ﻿using System.IO;
-using TMPro;
 using UnityEngine;
+using Object = System.Object;
 
 namespace Code.Datas
 {
-    [CreateAssetMenu(fileName =  "Data", menuName = "Data/Data")]
+    [CreateAssetMenu(fileName =  "MainData", menuName = "Data/Data")]
     public sealed class MainData : ScriptableObject
     {
         [SerializeField] private string pathToTownsData;
         [SerializeField] private string pathToSnakeData;
+
+        
+        [SerializeField] private float _speedOfAppearingTowns;
+
+        [SerializeField] private int _townsOnMapCount;
 
         private SnakeData _snakeData;
         private TownsData _townsData;
@@ -19,7 +24,8 @@ namespace Code.Datas
             {
                 if (_snakeData == null)
                 {
-                    _snakeData = Load<SnakeData>("Data/" + pathToSnakeData);
+                    Debug.Log("!!!");
+                    _snakeData = Resources.Load<SnakeData>("Data/" + pathToSnakeData);  
                 }
 
                 return _snakeData;
@@ -32,7 +38,7 @@ namespace Code.Datas
             {
                 if (_townsData == null)
                 {
-                    _townsData = Load<TownsData>("Data/" + pathToTownsData);
+                    _townsData = Resources.Load<TownsData>(Path.ChangeExtension("Data/" + pathToTownsData, null));  
                 }
 
                 return _townsData;
@@ -41,7 +47,7 @@ namespace Code.Datas
         
         
 
-        private T Load<T>(string resourcesPath) where T : Object =>
+        private T Load<T>(string resourcesPath) where T : UnityEngine.Object =>
             Resources.Load<T>(Path.ChangeExtension(resourcesPath, null));
     }
 }
