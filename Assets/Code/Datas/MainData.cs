@@ -1,10 +1,9 @@
 ﻿using System.IO;
-using TMPro;
 using UnityEngine;
 
 namespace Code.Datas
 {
-    [CreateAssetMenu(fileName =  "Data", menuName = "Data/Data")]
+    [CreateAssetMenu(fileName =  "MainData", menuName = "Data/Data")]
     public sealed class MainData : ScriptableObject
     {
         [SerializeField] private string pathToTownsData;
@@ -46,7 +45,7 @@ namespace Code.Datas
         
         
 
-        private T Load<T>(string resourcesPath) where T : Object =>
+        private T Load<T>(string resourcesPath) where T : UnityEngine.Object =>
             Resources.Load<T>(Path.ChangeExtension(resourcesPath, null));
     }
 }

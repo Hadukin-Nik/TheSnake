@@ -52,29 +52,40 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\Code\Factories\MainHeadSnakeFactory.cs" />
+     <Compile Include="Assets\Code\Datas\Managers\AxisManager.cs" />
+     <Compile Include="Assets\Code\Initialization\GameInitialization.cs" />
      <Compile Include="Assets\Code\Datas\TownsData.cs" />
      <Compile Include="Assets\Code\Interfaces\ILateExecute.cs" />
      <Compile Include="Assets\Code\Interfaces\IExecute.cs" />
+     <Compile Include="Assets\Code\Initialization\InputInitialization.cs" />
+     <Compile Include="Assets\Code\Initialization\MainDataTownsInitialization.cs" />
+     <Compile Include="Assets\Code\Factories\TownsFactory.cs" />
+     <Compile Include="Assets\Code\Initialization\PlayerInitialization.cs" />
      <Compile Include="Assets\Code\Interfaces\IInitialization.cs" />
      <Compile Include="Assets\Code\Controller\GameController.cs" />
      <Compile Include="Assets\Code\Interfaces\IController.cs" />
      <Compile Include="Assets\Code\Datas\SnakeData.cs" />
      <Compile Include="Assets\Code\Controller\Controllers.cs" />
+     <Compile Include="Assets\Code\Interfaces\IUserInput.cs" />
      <Compile Include="Assets\Code\Datas\MainData.cs" />
      <Compile Include="Assets\Code\GameStart\GameStarter.cs" />
-     <Compile Include="Assets\Code\Interfaces\ICleanup.cs" />
-     <Compile Include="Assets\Code\Datas\TownType.cs" />
-     <Compile Include="Assets\Code\Initialization\GameInitialization.cs" />
-     <Compile Include="Assets\Code\Initialization\InputInitialization.cs" />
-     <Compile Include="Assets\Code\Factories\MainHeadSnakeFactory.cs" />
-     <Compile Include="Assets\Code\Initialization\PlayerInitialization.cs" />
-     <Compile Include="Assets\Code\Controller\TownsController.cs" />
-     <Compile Include="Assets\Code\Factories\TownsFactory.cs" />
-     <Compile Include="Assets\Code\Initialization\TownsInitialization.cs" />
-     <Compile Include="Assets\Code\Interfaces\IUserInput.cs" />
-     <Compile Include="Assets\Code\GameLogicClasses\InputLogic\PCInputHorizontal.cs" />
      <Compile Include="Assets\Code\GameLogicClasses\InputLogic\PCInputVertical.cs" />
-     <Compile Include="Assets\Code\Datas\Managers\AxisManager.cs" />
+     <Compile Include="Assets\Code\Interfaces\ICleanup.cs" />
+     <Compile Include="Assets\Code\Datas\TownTypeData.cs" />
+     <Compile Include="Assets\Code\GameLogicClasses\InputLogic\PCInputHorizontal.cs" />
+     <Compile Include="Assets\Code\UnityExtentions\GameObjectExtension.cs" />
+     <Compile Include="Assets\Code\Interfaces\ISnakeFactory.cs" />
+     <Compile Include="Assets\Code\Initialization\CurrentTownTypeInitialize.cs" />
+     <Compile Include="Assets\Code\Towns\TownTypeController.cs" />
+     <Compile Include="Assets\Code\Towns\CurrentTown.cs" />
+     <Compile Include="Assets\Code\Towns\TownsController.cs" />
+     <Compile Include="Assets\Code\Interfaces\ITownFactory.cs" />
+     <Compile Include="Assets\Code\Factories\TownFactory.cs" />
+     <Compile Include="Assets\Code\Datas\Structures\TownDataProperty.cs" />
+     <Compile Include="Assets\Code\Datas\Structures\TownsDataContainer.cs" />
+     <Compile Include="Assets\Code\Controller\LevelController.cs" />
+     <Compile Include="Assets\Code\Interfaces\ITownsMainInformation.cs" />
  <Reference Include="UnityEngine">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.4f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
  </Reference>

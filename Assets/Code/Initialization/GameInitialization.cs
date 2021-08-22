@@ -1,4 +1,5 @@
 ﻿using Code.Datas;
+using Code.Interfaces;
 using UnityEngine;
 
 namespace Code.Controller
@@ -9,9 +10,9 @@ namespace Code.Controller
         {
             Camera camera = Camera.main;
             var inputInitialization = new InputInitialization();
-            // var mainHeadSnakeFactory = new MainHeadSnakeFactory(mainData.Snake);
-            // var playerInitialization = new PlayerInitialization(mainHeadSnakeFactory, mainData.Snake.StartPosition);
-            // var enemyInitialization = new TownsInitialization(mainData.Towns);
+            var mainHeadSnakeFactory = new MainHeadSnakeFactory(mainData.Snake);
+            var playerInitialization = new PlayerInitialization(mainHeadSnakeFactory, mainData.Snake.StartPosition);
+            ITownsMainInformation townsMainInformationInitization = new MainDataTownsInitialization(mainData.Towns);
             
         }
         

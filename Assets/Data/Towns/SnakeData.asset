@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: SnakeData
   m_EditorClassIdentifier: 
   _listOfTowns:
-  - pathToTownType: 
-    count: 0
+  - _nameOfTownType: Town
+    _count: 12
