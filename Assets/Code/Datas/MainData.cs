@@ -1,5 +1,6 @@
 ﻿using System.IO;
 using UnityEngine;
+using Object = System.Object;
 
 namespace Code.Datas
 {
@@ -23,7 +24,8 @@ namespace Code.Datas
             {
                 if (_snakeData == null)
                 {
-                    _snakeData = Load<SnakeData>("Data/" + pathToSnakeData);
+                    Debug.Log("!!!");
+                    _snakeData = Resources.Load<SnakeData>("Data/" + pathToSnakeData);  
                 }
 
                 return _snakeData;
@@ -36,7 +38,7 @@ namespace Code.Datas
             {
                 if (_townsData == null)
                 {
-                    _townsData = Load<TownsData>("Data/" + pathToTownsData);
+                    _townsData = Resources.Load<TownsData>(Path.ChangeExtension("Data/" + pathToTownsData, null));  
                 }
 
                 return _townsData;

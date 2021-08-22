@@ -16,8 +16,9 @@ namespace Code.Controller
 
         public Transform CreateSnakePart()
         {
+            
             return new GameObject(_snakeData.name).AddSprite(_snakeData.Sprite)
-                .AddBoxCollider2D().transform;        
+                .AddRigidbody2D(_snakeData.Mass).AddBoxCollider2D().transform;
         }
     }
 }

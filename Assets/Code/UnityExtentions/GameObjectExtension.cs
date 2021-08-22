@@ -14,7 +14,7 @@ namespace Code.UnityExtentions
         public static GameObject AddRigidbody2D(this GameObject gameObject, float mass)
         {
             var component = gameObject.GetOrAddComponent<Rigidbody2D>();
-            component.mass = mass;
+            component.isKinematic = true;
             return gameObject;
         }
 
@@ -29,6 +29,8 @@ namespace Code.UnityExtentions
             gameObject.GetOrAddComponent<CircleCollider2D>();
             return gameObject;
         }
+        
+
 
         public static GameObject AddSprite(this GameObject gameObject, Sprite sprite)
         {

@@ -15,9 +15,14 @@ namespace Code.Initialization
         
         private void Start()
         {
+            
             _controllers = new Controllers();
-            _gameController = gameObject.AddComponent<GameController>();
-            _gameController.SetControllers(_controllers);
+            gameObject.AddComponent<GameController>();
+            if (TryGetComponent(out GameController gameController))
+            {
+                gameController.SetControllers(_controllers);
+            }
+            new GameInitialization(_controllers, _mainData);
         }
     }
 }

@@ -7,10 +7,10 @@ namespace Code.GameLogicClasses.InputLogic
 {
     public sealed class PCInputHorizontal : IUserInput
     {
-        public event Action<float> axisOnChange = delegate(float f) {  };
+        public event Action<float> AxisOnChange = delegate(float f) {  };
         public void GetAxis()
         {
-            axisOnChange.Invoke((Input.GetAxis(AxisManager.HORIZONTAL)));
+            AxisOnChange.Invoke((Input.GetAxis(AxisManager.HORIZONTAL)));
         }
     }
 }
