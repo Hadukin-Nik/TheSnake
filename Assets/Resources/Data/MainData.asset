@@ -14,5 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pathToTownsData: MainTownsCreator
   pathToSnakeData: SnakeData
-  _speedOfAppearingTowns: 0
-  _townsOnMapCount: 0
+  _sizeOfLevel: {x: 8, y: 20}
+  _sizeOfCell: {x: 1, y: 1}
+  _speedOfTownsAppearing: 2
+  _townsOnMapCount: 12

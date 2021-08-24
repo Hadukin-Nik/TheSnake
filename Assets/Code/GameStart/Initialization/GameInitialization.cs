@@ -1,5 +1,6 @@
 ﻿using Code.Datas;
 using Code.Interfaces;
+using Code.Towns;
 using UnityEngine;
 
 namespace Code.Controller
@@ -19,6 +20,8 @@ namespace Code.Controller
             controllers.Add(new InputController(inputInitialization.GetInput()));
             controllers.Add(new MoveController(inputInitialization.GetInput(), 
                 playerInitialization.GetPlayer(), mainData.Snake));
+            controllers.Add(new TownsController(townsMainInformationInitization.GetListOfTownsOnLevel(),
+                mainData.SizeOfLevel, mainData.SizeOfCell, mainData.SpeedOfTownsAppearing));
         }
         
     }

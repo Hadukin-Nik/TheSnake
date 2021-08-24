@@ -2,6 +2,7 @@
 using Code.Datas;
 using Code.Datas.Structures;
 using Code.Interfaces;
+using UnityEngine;
 
 namespace Code.Controller
 {
@@ -17,7 +18,7 @@ namespace Code.Controller
                 _townTypeData = townTypeData;
                 Count = count;
             }
-
+            
             public TownTypeData TownType
             {
                 get
@@ -31,10 +32,13 @@ namespace Code.Controller
 
         public MainDataTownsInitialization(TownsData townsData)
         {
+            _towns = new List<TownsContainers>();
+            Debug.Log(townsData.ListOfTowns.Count);
             foreach (var town in townsData.ListOfTowns)
             {
                 _towns.Add(new TownsContainers(town.Town, town.Count));
             }
+            Debug.Log(_towns.Count);
         }
 
         public List<TownsContainers> GetListOfTownsOnLevel()

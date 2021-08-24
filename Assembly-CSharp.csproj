@@ -53,8 +53,10 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Code\Controller\Level\Towns\TownTypeController.cs" />
+     <Compile Include="Assets\Code\Interfaces\IMove.cs" />
      <Compile Include="Assets\Code\Factories\MainHeadSnakeFactory.cs" />
      <Compile Include="Assets\Code\Controller\Level\Towns\TownsController.cs" />
+     <Compile Include="Assets\Code\Controller\EngineControllers\InputController.cs" />
      <Compile Include="Assets\Code\Datas\Managers\AxisManager.cs" />
      <Compile Include="Assets\Code\GameStart\Initialization\GameInitialization.cs" />
      <Compile Include="Assets\Code\Datas\TownsData.cs" />
@@ -66,7 +68,9 @@
      <Compile Include="Assets\Code\GameStart\Initialization\InputInitialization.cs" />
      <Compile Include="Assets\Code\GameStart\Initialization\MainDataTownsInitialization.cs" />
      <Compile Include="Assets\Code\Factories\TownsFactory.cs" />
+     <Compile Include="Assets\Code\Controller\Level\CameraController.cs" />
      <Compile Include="Assets\Code\Factories\TownFactory.cs" />
+     <Compile Include="Assets\Code\Interfaces\IUnit.cs" />
      <Compile Include="Assets\Code\GameStart\Initialization\PlayerInitialization.cs" />
      <Compile Include="Assets\Code\Interfaces\IInitialization.cs" />
      <Compile Include="Assets\Code\Datas\Structures\TownDataProperty.cs" />
@@ -74,6 +78,7 @@
      <Compile Include="Assets\Code\UnityExtentions\GameObjectExtension.cs" />
      <Compile Include="Assets\Code\Interfaces\IController.cs" />
      <Compile Include="Assets\Code\Datas\SnakeData.cs" />
+     <Compile Include="Assets\Code\Controller\Snake\MoveController.cs" />
      <Compile Include="Assets\Code\Controller\EngineControllers\Controllers.cs" />
      <Compile Include="Assets\Code\Controller\Level\LevelController.cs" />
      <Compile Include="Assets\Code\Interfaces\IUserInput.cs" />
@@ -85,11 +90,9 @@
      <Compile Include="Assets\Code\Interfaces\ITownFactory.cs" />
      <Compile Include="Assets\Code\Datas\TownTypeData.cs" />
      <Compile Include="Assets\Code\GameLogicClasses\InputLogic\PCInputHorizontal.cs" />
-     <Compile Include="Assets\Code\Controller\EngineControllers\InputController.cs" />
-     <Compile Include="Assets\Code\Controller\Snake\MoveController.cs" />
-     <Compile Include="Assets\Code\Controller\Level\CameraController.cs" />
-     <Compile Include="Assets\Code\Interfaces\IMove.cs" />
-     <Compile Include="Assets\Code\Interfaces\IUnit.cs" />
+     <Compile Include="Assets\Code\UnityExtentions\ListExtensions.cs" />
+     <Compile Include="Assets\Code\Interfaces\IAttack.cs" />
+     <Compile Include="Assets\Code\Interfaces\IDamage.cs" />
  <Reference Include="UnityEngine">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.4f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
  </Reference>
