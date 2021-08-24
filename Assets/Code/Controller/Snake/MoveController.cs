@@ -76,7 +76,7 @@ namespace Code.Controller
                 {
                     _moveExecutable = _nextMove;
                 }
-                _rigidbody2D.MovePosition(_unit.position + _moveExecutable *_unitData.LengthStep);
+                _rigidbody2D.MovePosition(_unit.position + _moveExecutable * _unitData.LengthStep);
             }
         }
 
