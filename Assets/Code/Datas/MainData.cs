@@ -1,5 +1,6 @@
 ﻿using System.IO;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Object = System.Object;
 
 namespace Code.Datas
@@ -10,11 +11,13 @@ namespace Code.Datas
         [SerializeField] private string pathToTownsData;
         [SerializeField] private string pathToSnakeData;
 
+        [SerializeField] private Vector2 _sizeOfLevel;
+        [SerializeField] private Vector2 _sizeOfCell;
         
-        [SerializeField] private float _speedOfAppearingTowns;
-
+        [SerializeField] private float _speedOfTownsAppearing;
+        
         [SerializeField] private int _townsOnMapCount;
-
+        
         private SnakeData _snakeData;
         private TownsData _townsData;
 
@@ -49,5 +52,36 @@ namespace Code.Datas
 
         private T Load<T>(string resourcesPath) where T : UnityEngine.Object =>
             Resources.Load<T>(Path.ChangeExtension(resourcesPath, null));
+        
+        public Vector2 SizeOfLevel
+        {
+            get
+            {
+                return _sizeOfLevel;
+            }
+        }
+        public Vector2 SizeOfCell
+        {
+            get
+            {
+                return _sizeOfCell;
+            }
+        }
+
+        public float SpeedOfTownsAppearing
+        {
+            get
+            {
+                return _speedOfTownsAppearing;
+            }
+        }
+
+        public float MaxCountOfTownsOnLevel
+        {
+            get
+            {
+                return _townsOnMapCount;
+            }
+        }
     }
 }

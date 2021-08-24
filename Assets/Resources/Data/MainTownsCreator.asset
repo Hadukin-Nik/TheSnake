@@ -12,4 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4870ca9afd8c4e64985c42b9a708441f, type: 3}
   m_Name: MainTownsCreator
   m_EditorClassIdentifier: 
-  _listOfTowns: []
+  _listOfTowns:
+  - _nameOfTownType: Town
+    _count: 12
