@@ -20,7 +20,7 @@ namespace Code.Datas.Structures
             {
                 if (_town == null)
                 {
-                    _town = Load<TownTypeData>("Data/Towns" + _nameOfTownType);
+                    _town = Load<TownTypeData>("Data/" + _nameOfTownType);
                 }
 
                 return _town;

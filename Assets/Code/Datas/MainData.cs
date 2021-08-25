@@ -25,10 +25,10 @@ namespace Code.Datas
         {
             get
             {
+
                 if (_snakeData == null)
                 {
-                    Debug.Log("!!!");
-                    _snakeData = Resources.Load<SnakeData>("Data/" + pathToSnakeData);  
+                    _snakeData = Load<SnakeData>("Data/" + pathToSnakeData);
                 }
 
                 return _snakeData;
@@ -41,7 +41,7 @@ namespace Code.Datas
             {
                 if (_townsData == null)
                 {
-                    _townsData = Resources.Load<TownsData>(Path.ChangeExtension("Data/" + pathToTownsData, null));  
+                    _townsData = Load<TownsData>("Data/" + pathToTownsData);
                 }
 
                 return _townsData;
@@ -76,7 +76,7 @@ namespace Code.Datas
             }
         }
 
-        public float MaxCountOfTownsOnLevel
+        public int MaxCountOfTownsOnLevel
         {
             get
             {

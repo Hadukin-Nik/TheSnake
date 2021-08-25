@@ -44,7 +44,30 @@ namespace Code.Controller
 
             return this;
         }
-        
+        internal Controllers Delete(IController controller)
+        {
+            if (controller is IInitialization initializeController)
+            {
+                _initializeControllers.Remove(initializeController);
+            }
+
+            if (controller is IExecute executeController)
+            {
+                _executeControllers.Remove(executeController);
+            }
+
+            if (controller is ILateExecute lateExecuteController)
+            {
+                _lateControllers.Remove(lateExecuteController);
+            }
+            
+            if (controller is ICleanup cleanupController)
+            {
+                _cleanupControllers.Remove(cleanupController);
+            }
+
+            return this;
+        }
         public void Initialization()
         {
             for (var index = 0; index < _initializeControllers.Count; ++index)

@@ -1,4 +1,5 @@
-﻿using Code.Interfaces;
+﻿using System;
+using Code.Interfaces;
 using UnityEngine;
 
 namespace Code.Controller
@@ -22,7 +23,7 @@ namespace Code.Controller
         private float _timeForStep;
         private float _timeFromLastStep;
 
-
+        private bool _moveAccess;
         public MoveController((IUserInput inputHorizontal, IUserInput inputVertical) input, Transform unit,
             IUnit unitData)
         {
@@ -33,6 +34,9 @@ namespace Code.Controller
             _horizontalInput.AxisOnChange += HorizontalOnAxisOnChange;
             _verticalInput.AxisOnChange += VerticalOnAxisOnChange;
 
+            unit.GetComponent<SnakeContactsController>()._movePermission += MovePermission;
+            
+            
             _rigidbody2D = unit.GetComponent<Rigidbody2D>();
 
             _timeForStep = 1/_unitData.CountOfStepsInSecond ;
@@ -40,36 +44,50 @@ namespace Code.Controller
 
             _moveExecutable = Vector2.zero;
             _nextMove = Vector2.zero;
+
+            _moveAccess = true;
         }
 
+        private void MovePermission(bool permission)
+        {
+            _moveAccess = permission;
+        }
+        
         private void VerticalOnAxisOnChange(float value)
         {
-            if (value < 0)
+            if (_moveAccess)
             {
-                _nextMove = Vector2.down;
-            }
-            else if (value > 0)
-            {
-                _nextMove = Vector2.up;
-            }
+                if (value < 0)
+                {
+                    _nextMove = Vector2.down;
+                }
+                else if (value > 0)
+                {
+                    _nextMove = Vector2.up;
+                }
+            } 
+                
         }
 
         private void HorizontalOnAxisOnChange(float value)
         {
-            if (value < 0)
+            if (_moveAccess)
             {
-                _nextMove = Vector2.left;
-            }
-            else if (value > 0)
-            {
-                _nextMove = Vector2.right;
+                if (value < 0)
+                {
+                    _nextMove = Vector2.left;
+                }
+                else if (value > 0)
+                {
+                    _nextMove = Vector2.right;
+                }
             }
         }
 
         public void LateExecute(float deltaTime)
         {
             _timeFromLastStep -= deltaTime;
-            if (_timeFromLastStep <= 0)
+            if (_timeFromLastStep <= 0 && _moveAccess)
             {
                 _timeFromLastStep = _timeForStep;
                 if (_nextMove != Vector3.zero)

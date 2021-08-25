@@ -1,4 +1,5 @@
-﻿using Code.Interfaces;
+﻿using System;
+using Code.Interfaces;
 using UnityEngine;
 
 namespace Code.Controller
@@ -11,7 +12,7 @@ namespace Code.Controller
         public PlayerInitialization(ISnakeFactory playerFactory, Vector2 positionPlayer)
         {
             _playerFactory = playerFactory;
-            _player = _playerFactory.CreateSnakePart();
+            _player = _playerFactory.CreateSnakeHead();
             _player.position = positionPlayer;
         }
 
