@@ -61,7 +61,6 @@
      <Compile Include="Assets\Code\Datas\Managers\AxisManager.cs" />
      <Compile Include="Assets\Code\GameStart\Initialization\GameInitialization.cs" />
      <Compile Include="Assets\Code\Datas\TownsData.cs" />
-     <Compile Include="Assets\Code\Controller\Level\Towns\TownsDestroyController.cs" />
      <Compile Include="Assets\Code\Interfaces\ITownsMainInformation.cs" />
      <Compile Include="Assets\Code\Interfaces\ILateExecute.cs" />
      <Compile Include="Assets\Code\Datas\Structures\TownsDataContainer.cs" />
@@ -100,6 +99,14 @@
      <Compile Include="Assets\Code\Datas\TownTypeData.cs" />
      <Compile Include="Assets\Code\Interfaces\IAttack.cs" />
      <Compile Include="Assets\Code\GameLogicClasses\InputLogic\PCInputHorizontal.cs" />
+     <Compile Include="Assets\Code\Savers\SavedData.cs" />
+     <Compile Include="Assets\Code\Savers\IData.cs" />
+     <Compile Include="Assets\Code\Savers\JsonData.cs" />
+     <Compile Include="Assets\Code\Savers\TownOnLoadData.cs" />
+     <Compile Include="Assets\Code\Savers\SaveDataRepository.cs" />
+     <Compile Include="Assets\Code\Controller\EngineControllers\SaveController.cs" />
+     <Compile Include="Assets\Code\GameLogicClasses\InputLogic\PCInputSave.cs" />
+     <Compile Include="Assets\Code\GameLogicClasses\InputLogic\PCInputLoad.cs" />
  <Reference Include="UnityEngine">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.4f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
  </Reference>

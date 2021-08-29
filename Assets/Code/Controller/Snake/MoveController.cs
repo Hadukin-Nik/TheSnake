@@ -17,9 +17,6 @@ namespace Code.Controller
         private Vector3 _nextMove;
         private Vector3 _moveExecutable;
 
-        private float _horizontal;
-        private float _vertical;
-
         private float _timeForStep;
         private float _timeFromLastStep;
 
