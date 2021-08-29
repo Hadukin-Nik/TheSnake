@@ -14,6 +14,8 @@ namespace Code.Datas
         
         [SerializeField] private List<TownDataProperty> _propertiesOfTown;
 
+        [SerializeField] private string _nameOfTownType;
+        
         [SerializeField] private float _radiusCollaiderSize;
         [SerializeField] private float _timeToDeathAfterDestroy;
         [SerializeField] private float _health;
@@ -31,6 +33,14 @@ namespace Code.Datas
             get
             {
                 return _propertiesOfTown;
+            }
+        }
+        
+        public string NameOfTownType
+        {
+            get
+            {
+                return _nameOfTownType;
             }
         }
         

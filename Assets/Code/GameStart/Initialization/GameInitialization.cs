@@ -27,8 +27,8 @@ namespace Code.Controller
             controllers.Add(new TownsController(controllers, townsMainInformationInitization.GetListOfTownsOnLevel(), map.createMapOfTypeT(false),
                 mainData.SizeOfCell, mainData.SpeedOfTownsAppearing, mainData.MaxCountOfTownsOnLevel));
 
-            controllers.Add(new SaveController(inputInitialization.GetInputForSavesOnly(),
-                player.GetComponent<SnakeContactsController>()));
+            controllers.Add(new SaveController(controllers, mainData.Towns, inputInitialization.GetInputForSavesOnly(),
+                player));
         }
         
     }

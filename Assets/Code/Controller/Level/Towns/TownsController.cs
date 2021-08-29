@@ -13,7 +13,7 @@ namespace Code.Towns
 {
     public class TownsController : IExecute
     {
-        private Controllers _controllers;
+        private Controllers _controller;
         
         
         private ITownFactory _currentTownCreator;
@@ -33,9 +33,9 @@ namespace Code.Towns
         private int _countOfTowns;
         private int _maxTownsCount;
         
-        public TownsController(Controllers controllers, List<MainDataTownsInitialization.TownsContainers> townsInDataContainerOfLevel, List<List<bool>> cellUseage, Vector2 sizeOfCell, float timeForNewTown, int maxTowns)
+        public TownsController(Controllers controller, List<MainDataTownsInitialization.TownsContainers> townsInDataContainerOfLevel, List<List<bool>> cellUseage, Vector2 sizeOfCell, float timeForNewTown, int maxTowns)
         {
-            _controllers = controllers;
+            _controller = controller;
             
             
             _townsData = townsInDataContainerOfLevel;
@@ -79,7 +79,6 @@ namespace Code.Towns
             } else if (tryies > _townsData[randomTown].Count * 2)
             {
                 return;
-                
             }
 
             _currentTownCreator = new TownFactory(_townsData[randomTown].TownType);
@@ -99,14 +98,9 @@ namespace Code.Towns
             }
 
             ResourceHeapCreator resourcesAfterDeath = new ResourceHeapCreator(_townsData[randomTown].TownType.RadiusCollaiderSize);
-            town.InitializeTown(resourcesAfterDeath, DeleteTownFromControllers, _townsData[randomTown].TownType, new Vector2((float)x, (float)y) + _sizeOfCell, _townsData[randomTown].TownType.TimeToDeathAfterDestroy, _townsData[randomTown].TownType.Health);
-            _controllers.Add(town);
+            town.InitializeTown(_controller, resourcesAfterDeath, _townsData[randomTown].TownType,
+                new Vector2((float)x, (float)y) + _sizeOfCell, _townsData[randomTown].TownType.NameOfTownType, _townsData[randomTown].TownType.TimeToDeathAfterDestroy, _townsData[randomTown].TownType.Health);
             _countOfCreatedTypesOfTowns[randomTown]++;
-        }
-
-        private void DeleteTownFromControllers(CurrentTown town)
-        {
-            _controllers.Delete(town);
         }
     }
 }

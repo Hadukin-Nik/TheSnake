@@ -22,6 +22,7 @@ MonoBehaviour:
     _randomBorders:
       minInt: 20
       maxInt: 30
+  _nameOfTownType: BigTown
   _radiusCollaiderSize: 0.45
   _timeToDeathAfterDestroy: 1
   _health: 30

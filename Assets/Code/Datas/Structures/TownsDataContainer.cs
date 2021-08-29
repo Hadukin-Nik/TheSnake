@@ -26,6 +26,15 @@ namespace Code.Datas.Structures
                 return _town;
             }
         }
+        
+        
+        public string NameOfTownType
+        {
+            get
+            {
+                return _nameOfTownType;
+            }
+        }
 
         public int Count
         {

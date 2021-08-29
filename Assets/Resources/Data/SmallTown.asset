@@ -18,6 +18,7 @@ MonoBehaviour:
     _randomBorders:
       minInt: 0
       maxInt: 23
+  _nameOfTownType: SmallTown
   _radiusCollaiderSize: 0.15
   _timeToDeathAfterDestroy: 1
   _health: 10

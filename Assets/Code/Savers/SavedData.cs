@@ -77,12 +77,12 @@ namespace Code.Savers
     [Serializable]
     public struct TownsOnLoadSerializable
     {
-        public List<TownOnLoadData> TownsOnScene;
+        public List<TownOnLoadSerializable> TownsOnScene;
         
         private TownsOnLoadSerializable(List<TownOnLoadData> townsOnScene)
         {
-            TownsOnScene = new List<TownOnLoadData>(townsOnScene.Count);
-
+            TownsOnScene = new List<TownOnLoadSerializable>(townsOnScene.Count);
+                
             foreach (var town in townsOnScene)
             {
                 TownsOnScene.Add(town);
@@ -95,7 +95,7 @@ namespace Code.Savers
 
             foreach (var townSerialized in townsOnLoadSerializable.TownsOnScene)
             {
-                result.Add(townSerialized);
+                result.Add(new TownOnLoadData(townSerialized.TownType, townSerialized.TownPlace));
             }
 
             return result;

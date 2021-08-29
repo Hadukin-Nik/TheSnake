@@ -22,6 +22,7 @@ MonoBehaviour:
     _randomBorders:
       minInt: 60
       maxInt: 158
+  _nameOfTownType: MiddleTown
   _radiusCollaiderSize: 0.3
   _timeToDeathAfterDestroy: 1
   _health: 20
