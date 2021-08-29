@@ -14,8 +14,11 @@ namespace Code.Datas
         
         [SerializeField] private List<TownDataProperty> _propertiesOfTown;
 
+        [SerializeField] private string _nameOfTownType;
+        
         [SerializeField] private float _radiusCollaiderSize;
-
+        [SerializeField] private float _timeToDeathAfterDestroy;
+        [SerializeField] private float _health;
         
         public Sprite Sprite
         {
@@ -33,11 +36,35 @@ namespace Code.Datas
             }
         }
         
+        public string NameOfTownType
+        {
+            get
+            {
+                return _nameOfTownType;
+            }
+        }
+        
         public float RadiusCollaiderSize
         {
             get
             {
                 return _radiusCollaiderSize;
+            }
+        }
+
+        public float TimeToDeathAfterDestroy
+        {
+            get
+            {
+                return _timeToDeathAfterDestroy;
+            }
+        }
+
+        public float Health
+        {
+            get
+            {
+                return _health;
             }
         }
     }

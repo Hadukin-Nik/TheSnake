@@ -33,17 +33,16 @@ namespace Code.Controller
         public MainDataTownsInitialization(TownsData townsData)
         {
             _towns = new List<TownsContainers>();
-            Debug.Log(townsData.ListOfTowns.Count);
             foreach (var town in townsData.ListOfTowns)
             {
                 _towns.Add(new TownsContainers(town.Town, town.Count));
-            }
-            Debug.Log(_towns.Count);
+            } 
         }
 
         public List<TownsContainers> GetListOfTownsOnLevel()
         {
             return _towns;
         }
+        
     }
 }

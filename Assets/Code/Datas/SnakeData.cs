@@ -11,9 +11,16 @@ namespace Code.Datas
 
         [SerializeField] private Vector2 _startPosition = Vector2.zero;
         
+        
+        [SerializeField] private float _attackForce;
+        [SerializeField] private float _health;
+        
+        
         [SerializeField] private float _lengthOfStep;
         [SerializeField] private float _countOfStepsInSecond;
 
+
+        [SerializeField] private float _radius;
         [SerializeField] private float _mass;
         
         public Sprite Sprite
@@ -32,6 +39,22 @@ namespace Code.Datas
             }
         }
         
+        public float Health
+        {
+            get
+            {
+                return _health;
+            }
+        }
+        
+        public float AttackForce
+        {
+            get
+            {
+                return _attackForce;
+            }
+        }
+        
         public float LengthStep
         {
             get
@@ -47,7 +70,14 @@ namespace Code.Datas
                 return _countOfStepsInSecond;
             }
         }
-        
+
+        public float Radius
+        {
+            get
+            {
+                return _radius;
+            }
+        }
         public float Mass
         {
             get

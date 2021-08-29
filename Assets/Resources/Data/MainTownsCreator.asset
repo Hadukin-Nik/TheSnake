@@ -13,5 +13,9 @@ MonoBehaviour:
   m_Name: MainTownsCreator
   m_EditorClassIdentifier: 
   _listOfTowns:
-  - _nameOfTownType: Town
-    _count: 12
+  - _nameOfTownType: SmallTown
+    _count: 30
+  - _nameOfTownType: MiddleTown
+    _count: 30
+  - _nameOfTownType: BigTown
+    _count: 30

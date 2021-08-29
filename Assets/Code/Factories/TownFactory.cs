@@ -16,7 +16,7 @@ namespace Code.Controller
         public Transform CreateTown()
         {
             return new GameObject(_town.name).AddSprite(_town.Sprite)
-                .AddBoxCollider2D().transform;
+                .AddCircleCollider2D(_town.RadiusCollaiderSize).AddRigidbody2D(0f).transform;
         }
     }
 }
