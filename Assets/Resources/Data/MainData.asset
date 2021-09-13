@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15aa6fd3ad5848978ed43787c56968a5, type: 3}
   m_Name: MainData
   m_EditorClassIdentifier: 
-  pathToTownsData: MainTownsCreator
-  pathToSnakeData: SnakeData
+  pathToTownsData: Towns/MainTownsCreator
+  pathToSnakeData: Snake/SnakeData
+  pathToSectionsData: Cells/SectionsData
+  pathToButtonsData: Buttons/ButtonsData
   _sizeOfLevel: {x: 20, y: 8}
   _sizeOfCell: {x: 1, y: 1}
   _speedOfTownsAppearing: 1

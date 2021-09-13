@@ -2,6 +2,7 @@
 using Code.Controller;
 using Code.Datas;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Code.Initialization
 {
@@ -12,7 +13,8 @@ namespace Code.Initialization
         private GameController _gameController;
         
         private Controllers _controllers;
-        
+
+        private SaveController _saveController;
         private void Start()
         {
             
@@ -22,7 +24,16 @@ namespace Code.Initialization
             {
                 gameController.SetControllers(_controllers);
             }
-            new GameInitialization(_controllers, _mainData);
+
+            _saveController = new SaveController(_controllers, _mainData);
+            _saveController.Load += CreateSceneParameters;
+            CreateSceneParameters(gameObject.transform);
+        }
+
+        private void CreateSceneParameters(Transform tryLoad)
+        {
+            new GameInitialization(_controllers, _mainData, _saveController);
+
         }
     }
 }
