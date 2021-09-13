@@ -11,4 +11,9 @@ namespace Code.Datas.Managers
         public const KeyCode LOADBUTTON = KeyCode.F6;
 
     }
+    
+    public enum ButtonType
+    {
+        NewWeapon = 0, NewSection = 1, 
+    }
 }

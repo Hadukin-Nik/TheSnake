@@ -14,7 +14,8 @@ namespace Code.Datas
         
         [SerializeField] private float _attackForce;
         [SerializeField] private float _health;
-        
+
+        [SerializeField] private float _startSizeOfStorage;
         
         [SerializeField] private float _lengthOfStep;
         [SerializeField] private float _countOfStepsInSecond;
@@ -52,6 +53,14 @@ namespace Code.Datas
             get
             {
                 return _attackForce;
+            }
+        }
+
+        public float SizeOfStorage
+        {
+            get
+            {
+                return _startSizeOfStorage;
             }
         }
         

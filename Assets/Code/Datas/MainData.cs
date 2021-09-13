@@ -10,6 +10,8 @@ namespace Code.Datas
     {
         [SerializeField] private string pathToTownsData;
         [SerializeField] private string pathToSnakeData;
+        [SerializeField] private string pathToSectionsData;
+        [SerializeField] private string pathToButtonsData;
 
         [SerializeField] private Vector2 _sizeOfLevel;
         [SerializeField] private Vector2 _sizeOfCell;
@@ -19,7 +21,9 @@ namespace Code.Datas
         [SerializeField] private int _townsOnMapCount;
         
         private SnakeData _snakeData;
+        private SectionsData _sectionsData;
         private TownsData _townsData;
+        private ButtonsData _buttonsData;
 
         public SnakeData Snake
         {
@@ -45,6 +49,32 @@ namespace Code.Datas
                 }
 
                 return _townsData;
+            }
+        }
+
+        public SectionsData Sections
+        {
+            get
+            {
+                if (_sectionsData == null)
+                {
+                    _sectionsData = Load<SectionsData>("Data/" + pathToSectionsData);
+                }
+
+                return _sectionsData;
+            }
+        }
+        
+        public ButtonsData Buttons
+        {
+            get
+            {
+                if (_buttonsData == null)
+                {
+                    _buttonsData = Load<ButtonsData>("Data/" + pathToButtonsData);
+                }
+
+                return _buttonsData;
             }
         }
         
