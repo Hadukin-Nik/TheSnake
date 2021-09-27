@@ -28,6 +28,7 @@ namespace Code.Controller
             GameObject snakeHead = new GameObject(_snakeData.name).AddSprite(_snakeData.Sprite)
                 .AddRigidbody2D(_snakeData.Mass).AddCircleCollider2D(_snakeData.Radius);
             SnakeContactsController myLittleMonoBehaviour = snakeHead.GetOrAddComponent<SnakeContactsController>();
+            _controllers.Add(myLittleMonoBehaviour);
             myLittleMonoBehaviour.Initialize(_controllers, _snakeData.AttackForce, _snakeData.Health, _snakeData.CountOfStepsInSecond/1);
             _controllers.Add(myLittleMonoBehaviour);
             snakeHead.transform.position = _snakeData.StartPosition;

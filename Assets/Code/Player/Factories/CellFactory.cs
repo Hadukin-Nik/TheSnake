@@ -21,7 +21,7 @@ namespace Code.Player.Factories
                 .AddRigidbody2D(_snakeData.Mass).AddCircleCollider2D(_snakeData.Radius);
              Cell cell = snakeCell.GetOrAddComponent<Cell>();
              snakeCell.transform.position = myPosition;
-            cell.Initialize();
+            cell.Initialize(snakeCell.transform.position );
             return cell;
         }
     }

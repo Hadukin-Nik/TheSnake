@@ -29,7 +29,7 @@ namespace Code.Player.Factories
             GameObject cell = new GameObject(_sectionContainerData.name).AddSprite(_sectionContainerData.Sprite)
                 .AddRigidbody2D(0.0f).AddCircleCollider2D(_sectionContainerData.Radius);
             Cell myLittleMonoBehaviour = cell.GetOrAddComponent<Cell>();
-            myLittleMonoBehaviour.Initialize();
+            myLittleMonoBehaviour.Initialize(myPosition);
             cell.transform.position = myPosition;
             return myLittleMonoBehaviour;
         }

@@ -43,6 +43,7 @@ namespace Code.Controller
             
             _snake =  unit.GetComponent<SnakeContactsController>();
             _snake._movePermission += MovePermission;
+            StepEvent += _snake.AddNewMoveCommandToFollower;
             
             
             _rigidbody2D = unit.GetComponent<Rigidbody2D>();
@@ -103,13 +104,7 @@ namespace Code.Controller
                     _moveExecutable = _nextMove;
                 }
                 _rigidbody2D.MovePosition(_unit.position + _moveExecutable * _unitData.LengthStep);
-                if (_myPosition != _unit.position)
-                {
-                    _myLastPosition = _myPosition;
-                    _myPosition = _unit.position;
-                    _snake.ChangeConstractionPlace(_myLastPosition);
-                }
-                StepEvent?.Invoke(_moveExecutable * _unitData.LengthStep);
+                StepEvent?.Invoke(_unit.position);
             }
         }
 

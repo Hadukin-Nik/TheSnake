@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f2bbde0a0b84b2cbd00387c83d92b6d, type: 3}
   m_Name: MiddleTown
   m_EditorClassIdentifier: 
-  _sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  _sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   _propertiesOfTown:
   - _nameOfBonus: Steel
     _randomBorders:

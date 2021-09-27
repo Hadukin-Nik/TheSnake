@@ -15,11 +15,11 @@ namespace Code.Controller
         
         private Queue<Vector2> _queueOfCommands;
 
-        public CellMoveController(Transform cell)
+        public CellMoveController(Transform cell, Vector2 lastCellPosition)
         {
+            _unit = cell;
             _rigidbody2D = cell.GetComponent<Rigidbody2D>();
             _queueOfCommands = new Queue<Vector2>();
-            _queueOfCommands.Enqueue(Vector2.zero);
         }
         public void AddMoveCommand(Vector2 moveDirection)
         {
@@ -29,9 +29,9 @@ namespace Code.Controller
 
         private void _move(Vector2 moveDirection)
         {
-            
+            Vector2 newCommandMove = _unit.position;
             _rigidbody2D.MovePosition(moveDirection);
-            StepEvent.Invoke(moveDirection);
+            StepEvent.Invoke(newCommandMove);
         }
 
         

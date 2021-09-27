@@ -14,7 +14,7 @@ namespace Code.Experimental
         private Button1 a;
         public void Start()
         {
-            a = new Button1(canvas, someBgSprite, scale, position);
+            // a = new Button1(canvas, someBgSprite, scale, position);
         }
 
         

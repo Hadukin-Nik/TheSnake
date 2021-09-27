@@ -43,6 +43,7 @@ namespace Code.Controller
             _iHaveFollower = false;
 
             Initialization();
+            _placeToBuildSection = transform.position;
         }
         
         public void OnCollisionEnter2D(Collision2D other)
@@ -74,6 +75,18 @@ namespace Code.Controller
             _movePermission?.Invoke(permission);
         }
 
+        public void AddNewMoveCommandToFollower(Vector2 move)
+        {
+            if (_iHaveFollower)
+            {
+                _myFollower.NewMoveCommand(move);
+            }
+        }
+
+        public void ChangePlaceToBuildSection(Vector2 newPosition)
+        {
+            
+        } 
         public void Initialization()
         {
             _snakeAttackController = new SnakeAttackController(_listOfContact, MoveSwitcher, _attack, 1 / _speedOfAttack );
@@ -81,28 +94,17 @@ namespace Code.Controller
             _materials = new Dictionary<string, float>();
         }
 
-
-        public void ChangeConstractionPlace(Vector3 newPosition)
-        {
-            _placeToBuildSection = newPosition;
-            if (_iHaveFollower)
-            {
-                _myFollower.NewMoveCommand(newPosition);
-            }
-        }
-
-
         public void ConstructProject(IBuildNewCell buildOrder)
         {
-            if (_myFollower != null)
+            if (_iHaveFollower)
             {
                 _myFollower.ConstructCommand(buildOrder);
-                
             }
             else
             {
                 _iHaveFollower = true;
-                _myFollower = buildOrder.CreateNewCell(_placeToBuildSection);
+                if (_placeToBuildSection != transform.position)
+                    _myFollower = buildOrder.CreateNewCell(_placeToBuildSection);
             }
         }
     }

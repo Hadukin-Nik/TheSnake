@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Code.Interfaces;
 using Code.Player.Interface;
 using UnityEngine;
 
@@ -11,6 +12,7 @@ namespace Code.Controller
         private Vector2 _myPresentPosition;
 
         private float _healthPoints;
+        private float _timeFromLastBuild = 0f;
         
         private IMove _moveMe;
         private IMoveCommander _moveCommander;
@@ -21,9 +23,9 @@ namespace Code.Controller
 
         private IFollower _myFollower;
         private bool _IHaveFollower = false;
-        public void Initialize()
+        public void Initialize(Vector2 positionOFLastCell)
         {
-            CellMoveController cellMoveController = new CellMoveController(transform);
+            CellMoveController cellMoveController = new CellMoveController(transform, positionOFLastCell);
             _moveMe = cellMoveController;
             _moveCommander = cellMoveController;
 
@@ -47,7 +49,7 @@ namespace Code.Controller
             }
             if (_contructNeeded && _constructPossible)
             {
-                _myFollower = _buildNewCellCommand.CreateNewCell(_myLastPosition);
+                _myFollower = _buildNewCellCommand.CreateNewCell(_myLastPosition );
                 _IHaveFollower = true;
 
                 _constructPossible = false;
@@ -72,6 +74,6 @@ namespace Code.Controller
                 _contructNeeded = true;
             }
 
-        } 
+        }
     }
 }
